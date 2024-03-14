@@ -3,7 +3,7 @@ import Collection from "@/components/shared/Collection";
 import { getEventById, getRelatedEventsByCategory } from "@/lib/actions/event.actions"
 import { formatDateTime } from "@/lib/utils";
 import { SearchParamProps } from "@/types"
-import events from "events";
+//import events from "events";
 import Image from "next/image";
 
 const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) => {
@@ -106,9 +106,9 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
                     emptyTitle="No events found"
                     emptyStateText="Come back later"
                     collectionType="All_events"
-                    limit={6}
-                    page={1}
-                    totalPages={2}
+                    limit={3}
+                    page={searchParams.page as string}
+                    totalPages={relatedEvents?.totalPages}
                 />
             </section>
 
